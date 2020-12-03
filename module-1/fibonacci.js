@@ -15,18 +15,24 @@ function fibonacci(n) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
-    if (n <= 0){
+
+    if (n <= 0 || typeof n != "number"){
         return 0;
     }
-    let num1 = 0;
-    let num2 = 1;
-    for(let i = 2; i <= n; i++){
-        let sum = num1 + num2;
-        num1 = num2;
-        num2 = sum;
+    if (n === 1) {
+        return 1;
     }
-    nThFibonacci = num2;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+    // let num1 = 0;
+    // let num2 = 1;
+    // for(let i = 2; i <= n; i++){
+    //     let sum = num1 + num2;
+    //     num1 = num2;
+    //     num2 = sum;
+    // }
+    // nThFibonacci = num2;
     // ...AND THIS COMMENT LINE!
-    return nThFibonacci;
+    //return nThFibonacci;
 }
+console.log(fibonacci("asd"));
 module.exports = fibonacci;
