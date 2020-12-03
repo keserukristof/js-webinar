@@ -27,6 +27,7 @@ function grade(score) {
                     : (score <= 69 && score >= 60) ? 2
                     : (score <= 59 && score >= 0) ? 1
                     : 0
+    //gradeOfStudent = Math.floor((Math.max(50, Math.min(99, score)) - 40) / 10);
     // ...AND THIS COMMENT LINE!
     return gradeOfStudent;
 }
