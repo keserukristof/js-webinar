@@ -21,8 +21,15 @@ function grade(score) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
-
+    gradeOfStudent = (score <= 100 && score >= 90) ? 5
+                    : (score <= 89 && score >= 80) ? 4
+                    : (score <= 79 && score >= 70) ? 3
+                    : (score <= 69 && score >= 60) ? 2
+                    : (score <= 59 && score >= 0) ? 1
+                    : 0
+    //gradeOfStudent = Math.floor((Math.max(50, Math.min(99, score)) - 40) / 10);
     // ...AND THIS COMMENT LINE!
     return gradeOfStudent;
 }
+
 module.exports = grade;
