@@ -34,5 +34,4 @@ function fibonacci(n) {
     // ...AND THIS COMMENT LINE!
     //return nThFibonacci;
 }
-console.log(fibonacci("asd"));
 module.exports = fibonacci;
