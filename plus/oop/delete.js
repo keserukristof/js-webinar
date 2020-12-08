@@ -7,7 +7,7 @@
  * @param {string} key the name of the property to delete
  * @returns {object} the new object without the given property
  */
-function del(o, key) {
+function deleteProperty(o, key) {
     if (typeof o != "object") {
         throw new Error("Not object is passed");
     }
@@ -16,4 +16,4 @@ function del(o, key) {
     return o2;
 }
 
-module.exports = del;
+module.exports = deleteProperty;
