@@ -11,9 +11,9 @@ function deleteProperty(o, key) {
     if (typeof o != "object") {
         throw new Error("Not object is passed");
     }
-    let o2 = {...o};
-    delete o2[key];
-    return o2;
+    let newObject = {...o};
+    delete newObject[key];
+    return newObject;
 }
 
 module.exports = deleteProperty;
