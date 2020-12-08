@@ -15,8 +15,7 @@
  *       the given name or throws an Erorr if it cannot
  *       find the element
  */
-
-const ElementFinder = require("../test/mock/ElementFinder");
+const { element } = require("../test/mock/ElementFinder");
 
 class Element {
     constructor(name, locator) {
@@ -39,15 +38,13 @@ class Element {
     }
 
     get(n) {
-        if (n === undefined) {
-            return new ElementFinder(this.locator);
-        } else {
-            if (!this.children.hasOwnProperty(n)) {
-                throw new Error(n + " child element is not found");
-            } else {
-                return new ElementFinder(this.children[n].locator);
-            }
+        if (!n) {
+            return element(this.locator);
         }
+        if (!this.children.hasOwnProperty(n)) {
+            throw new Error(n + " child element is not found");
+        }
+        return element(this.children[n].locator);
     }
 }
 

@@ -14,7 +14,7 @@
  *    by the locator (.get(n)) in it's context
  */
 const Element = require("./Element");
-const ElementArrayFinder = require("../test/mock/ElementArrayFinder");
+const { element } = require("../test/mock/ElementFinder")
 
 class Elements extends Element {
     constructor(name, locator) {
@@ -28,11 +28,11 @@ class Elements extends Element {
     }
 
     all() {
-        return new ElementArrayFinder().all(this.locator);
+        return  element().all(this.locator);
     }
 
     get(n) {
-        return new ElementArrayFinder().get(n);
+        return  element().get(n);
     }
 }
 
