@@ -11,7 +11,8 @@ function deleteProperty(o, key) {
     if (typeof o != "object") {
         throw new Error("Not object is passed");
     }
-    let newObject = {...o};
+    let newObject = {}
+    Object.assign(newObject, o);
     delete newObject[key];
     return newObject;
 }
