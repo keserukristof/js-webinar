@@ -6,6 +6,9 @@
  *                     or empty array if it is not an object
  */
 function properties(o) {
+    if (typeof o !== "object") {
+        throw new Error("Not object passed!")
+    }
     return Object.keys(o);
 }
 
