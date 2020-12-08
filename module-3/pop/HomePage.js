@@ -19,7 +19,7 @@ class HomePage extends Layout{
         }
     }
 
-    getSlider(parentElement) {
+    getSlider() {
         if (this.children.hasOwnProperty("Slider")) {
             return element(this.children["Slider"].locator);
         } else {
