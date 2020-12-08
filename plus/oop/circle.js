@@ -8,11 +8,13 @@
  */
 class Circle {
     constructor(r) {
-        if (typeof r != "number" || r < 0) {
-            throw new Error("Not valid radius!")
-        } else {
-            this.r = r
+        if (typeof r != "number") {
+            throw new Error("Not valid number!")
         }
+        if (r < 0) {
+            throw new Error("Radius cannot be less than zero!")
+        }
+        this.r = r
     }
 
     getPerimeter() {
@@ -20,7 +22,7 @@ class Circle {
     }
 
     getArea() {
-        return this.r * this.r * Math.PI;
+        return Math.pow(this.r, 2) * Math.PI;
     }
 }
 
