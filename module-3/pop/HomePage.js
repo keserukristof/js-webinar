@@ -4,27 +4,15 @@
  * for it (test/pop/HomePage.spec.js).
  */
 const Layout = require("./Layout")
-const { element } = require("../test/mock/ElementFinder")
+const Element = require("./Element")
 
 class HomePage extends Layout{
     constructor(name, url, locator) {
-        super(name, url, locator);
-    }
-
-    getHeader() {
-        if (this.children.hasOwnProperty("Header")) {
-            return element(this.children["Header"].locator);
-        } else {
-            throw new Error("Header is not found!");
-        }
-    }
-
-    getSlider() {
-        if (this.children.hasOwnProperty("Slider")) {
-            return element(this.children["Slider"].locator);
-        } else {
-            throw new Error("Slider is not found!");
-        }
+        super("Home page", "https://www.epam.com/", "body");
+        const header = new Element("Header", {css: ".header__content"});
+        this.addChildren(header);
+        const slider = new Element("Slider", {css: ".slider__slide"});
+        this.addChildren(slider);
     }
 }
 
