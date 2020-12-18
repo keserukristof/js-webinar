@@ -37,14 +37,14 @@ class Element {
         this.children[child.name] = child;
     }
 
-    get(n) {
-        if (!n) {
+    get(name) {
+        if (!name) {
             return element(this.locator);
         }
-        if (!this.children.hasOwnProperty(n)) {
-            throw new Error(n + " child element is not found");
+        if (!this.children.hasOwnProperty(name)) {
+            throw new Error(name + " child element is not found");
         }
-        return element(this.children[n].locator);
+        return this.children[name].get();
     }
 }
 
