@@ -10,67 +10,75 @@ describe('HomePage Class', () => {
     });
 
     it('should have stored name', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
+        const homePage = new HomePage();
 
         expect(homePage.name).not.to.be.undefined;
-        expect(homePage.name).to.equal('Home');
+        expect(homePage.name).to.equal('Home page');
     });
 
     it('should have stored url', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
+        const homePage = new HomePage();
 
         expect(homePage.url).not.to.be.undefined;
         expect(homePage.url).to.equal('https://www.epam.com/');
     });
 
     it('should have stored locator', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
+        const homePage = new HomePage();
 
         expect(homePage.locator).not.to.be.undefined;
-        expect(homePage.locator.css).to.equal('body');
+        expect(homePage.locator).to.equal('body');
     });
 });
 
 describe("Get header", () => {
     it('should return error if root element does not exists', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
-        const child = new Element('Header', {css: '.header__content'});
+        const homePage = new HomePage();
 
-        expect(homePage.getHeader).not.to.be.undefined;
-        expect(() => homePage.getHeader(homePage)).to.throw();
+        expect(homePage.get()).not.to.be.undefined;
+        expect(() => homePage.get("Not home page")).to.throw();
     });
 
     it('should return the element header', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
-        const child = new Element('Header', {css: '.header__content'});
+        const homePage = new HomePage();
 
-        homePage.addChildren(child);
+        const pElement = homePage.get("Header");
 
-        const pElement = homePage.getHeader();
-
-        expect(homePage.getHeader).not.to.be.undefined;
+        expect(homePage.get()).not.to.be.undefined;
         expect(pElement.locator().css).to.equal('.header__content');
     });
+
+    it('should throw error if I try to add existing element', () => {
+        const homePage = new HomePage();
+        const header = new Element("Header", {css: ".header__content"});
+
+        expect(homePage.addChildren).not.to.be.undefined;
+        expect(() => homePage.addChildren(header)).to.throw();
+    })
 });
 
 describe("Get slider", () => {
     it('should return error if root element does not exists', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
-        const child = new Element('Slider', {css: '.slider__slide'});
+        const homePage = new HomePage();
 
-        expect(homePage.getSlider).not.to.be.undefined;
-        expect(() => homePage.getSlider(child)).to.throw();
+        expect(homePage.get()).not.to.be.undefined;
+        expect(() => homePage.get("Not slider")).to.throw();
     });
 
     it('should return the slider', () => {
-        const homePage = new HomePage('Home', 'https://www.epam.com/', {css: 'body'});
-        const child = new Element('Slider', {css: '.slider__slide'});
+        const homePage = new HomePage();
 
-        homePage.addChildren(child);
+        const pElement = homePage.get("Slider");
 
-        const pElement = homePage.getSlider();
-
-        expect(homePage.getSlider).not.to.be.undefined;
+        expect(homePage.get()).not.to.be.undefined;
         expect(pElement.locator().css).to.equal('.slider__slide');
     });
+
+    it('should throw error if I try to add existing element', () => {
+        const homePage = new HomePage();
+        const slider = new Element("Slider", {css: ".slider__slide"});
+
+        expect(homePage.addChildren).not.to.be.undefined;
+        expect(() => homePage.addChildren(slider)).to.throw();
+    })
 });
