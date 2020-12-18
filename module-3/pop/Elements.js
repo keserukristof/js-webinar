@@ -28,11 +28,11 @@ class Elements extends Element {
     }
 
     all() {
-        return  element().all(this.locator);
+        return element().all(this.locator);
     }
 
-    get(n) {
-        return  element().get(n);
+    get(name) {
+        return element().all(this.locator).get(name);
     }
 }
 
