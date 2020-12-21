@@ -1,11 +1,11 @@
 /**
  * Create Element class, which represents an element of
  * the application, and
- * 
+ *
  * 1. It has a protractor locator (.locator),
  *    e.g. by.css("h1.title")
  * 2. It has a name (.name), e.g. "Document Title"
- * 3. It can have a parent Element, 
+ * 3. It can have a parent Element,
  *    which is the context of the element (.parent)
  * 4. It can have children Elements (.children)
  * 5. It has a method to retrieve the protractor element
@@ -15,3 +15,37 @@
  *       the given name or throws an Erorr if it cannot
  *       find the element
  */
+const { element } = require("../test/mock/ElementFinder");
+
+class Element {
+    constructor(name, locator) {
+        this.name = name;
+        this.locator = locator;
+
+        this.parent = null;
+        this.children = {};
+    }
+
+    setParent(parent) {
+        this.parent = parent;
+    }
+
+    addChildren(child) {
+        if (this.children.hasOwnProperty(child.name)) {
+            throw new Error(child.name + " is already added!");
+        }
+        this.children[child.name] = child;
+    }
+
+    get(name) {
+        if (!name) {
+            return element(this.locator);
+        }
+        if (!this.children.hasOwnProperty(name)) {
+            throw new Error(name + " child element is not found");
+        }
+        return this.children[name].get();
+    }
+}
+
+module.exports = Element;

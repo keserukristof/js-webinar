@@ -5,3 +5,16 @@
  * @param {object} o the object
  * @returns {object} the new object
  */
+function reverse(o) {
+    if (typeof o !== "object") {
+        throw new Error("Not object passed!")
+    }
+    // let o2 = {}
+    // for (let key in o) {
+    //     o2[o[key]] = key;
+    // }
+    // return o2
+    Object.fromEntries(Object.entries(o).map( ([key, value]) => [value, key]));
+}
+
+module.exports = reverse;
