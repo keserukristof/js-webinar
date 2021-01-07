@@ -7,13 +7,17 @@
  */
 module.exports = function wait(sec) {
     return new Promise((resolve, reject) => {
-        if (typeof sec === "number" && sec > 1) {
-            if (sec > 10) {
-                sec = 10;
-            }
-            setTimeout(resolve, sec * 1000);
-        } else {
-            reject();
+        if (typeof sec !== "number") {
+            reject(Error("sec has to be a number"));
         }
+        if (sec < 1) {
+            reject(Error("sec can not be less than 1"));
+        }
+        if (sec > 10) {
+            sec = 10;
+        }
+        setTimeout(() => resolve(), sec * 1000);
     });
 }
+
+
