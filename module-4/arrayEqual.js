@@ -20,6 +20,7 @@ function arrayEqual(first, second) {
     for (let i = 0; i < first.length; i++) {
         if (Array.isArray(first[i]) || Array.isArray(second[i])) {
             if (!arrayEqual(first[i], second[i])) {
+                console.warn(`The two arrays are not equal because the ${first[i]} and the ${second[i]} sub arrays are not equal`);
                 return false;
             }
         } else if (first[i] !== second[i]) {
