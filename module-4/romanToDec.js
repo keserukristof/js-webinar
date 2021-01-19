@@ -22,13 +22,15 @@ function romanToDecimal(roman) {
         "M": 1000
     };
 
+
     for (let i = 0; i < roman.length; i++) {
         if (!Object.keys(romanDecimalPairs).includes(roman[i])) {
             throw new Error(`The ${roman[i]} at the ${i + 1} character is not valid.`);
         }
-        if (roman[i + 3] === roman[i + 2] && roman[i + 2] === roman[i + 1] && roman[i + 1] === roman[i]) {
-            throw new Error("A roman number can not contains four or more of the same character.")
-        }
+    }
+    
+    if (/(.)\1{3}/.test(roman)) {
+        throw new Error("A roman number can not contains four or more of the same character.");
     }
 
 
@@ -48,5 +50,5 @@ function romanToDecimal(roman) {
     }
     return sum;
 }
-
+console.log(romanToDecimal("XIIII"))
 module.exports = romanToDecimal;
