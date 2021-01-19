@@ -13,6 +13,11 @@
  *                    false otherwise
  */
 function arraySorted(items) {
+    if (!Array.isArray(items)) {
+        console.warn("The items is not an array. Please give an array as parameter.");
+        return false;
+    }
+
     const clearItems = items.map(item => {
         if (typeof item === "string") {
             return item.replace(/[^a-zA-Z]/g, "").toLowerCase();
