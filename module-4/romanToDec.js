@@ -28,7 +28,7 @@ function romanToDecimal(roman) {
             throw new Error(`The ${roman[i]} at the ${i + 1} character is not valid.`);
         }
     }
-    
+
     if (/(.)\1{3}/.test(roman)) {
         throw new Error("A roman number can not contains four or more of the same character.");
     }
