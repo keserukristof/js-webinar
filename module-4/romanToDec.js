@@ -30,7 +30,7 @@ function romanToDecimal(roman) {
     }
 
     if (/(.)\1{3}/.test(roman)) {
-        throw new Error("A roman number can not contains four or more of the same character.");
+        throw new Error("A roman number can not contain four or more of the same character.");
     }
 
 
