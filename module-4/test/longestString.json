@@ -4,8 +4,12 @@
         "result": ""
     },
     {
-        "arguments": [["foo", "baar"]],
-        "result": "baar"
+        "arguments": [["foooooo", "baar"]],
+        "result": "foooooo"
+    },
+    {
+        "arguments": [["boo", "boa"]],
+        "result": "boa"
     },
     {
         "arguments": [["foo", "arm"]],
