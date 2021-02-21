@@ -134,7 +134,7 @@ describe.only('calc', () => {
         });
 
         it("should be able to get the modulo of the current value by a number, in case of fractional numbers", () => {
-            return expect(calc(1.1).modulo(1.05).v).to.equal(0.05);
+            return expect(calc(1.1).modulo(1.05).v).to.be.closeTo(0.05, 0.001);
         });
     });
 
