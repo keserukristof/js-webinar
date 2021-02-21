@@ -100,7 +100,7 @@ describe.only('calc', () => {
         it("should be able to multiply the current value by a number, in case of fractional numbers", () => {
             return expect(calc(1.3).times(5.1).v).to.equal(6.63);
         });
-    })
+    });
 
     describe("divide", () => {
         it("should exist", () => {
@@ -122,7 +122,7 @@ describe.only('calc', () => {
         it("should be able to divide the current value by a number, in case of fractional numbers", () => {
             return expect(calc(4.5).divide(2.25).v).to.equal(2);
         });
-    })
+    });
 
     describe("modulo", () => {
         it("should exist", () => {
@@ -135,6 +135,16 @@ describe.only('calc', () => {
 
         it("should be able to get the modulo of the current value by a number, in case of fractional numbers", () => {
             return expect(calc(1.1).modulo(1.05).v).to.equal(0.05);
+        });
+    });
+
+    describe("convert to string", () => {
+        it('should convert the result of the calculation to string', () => {
+            return expect(calc(1).toString()).to.be.a("string");
+        });
+
+        it('should return the correct result of the calculation in string format', () => {
+            return expect(calc(1).toString()).to.equal("1");
         });
     })
 
@@ -156,5 +166,5 @@ describe.only('calc', () => {
                                       .minus(1.5)
                                       .times(0.5).v).to.equal(0.25);
         });
-    })
+    });
 });
