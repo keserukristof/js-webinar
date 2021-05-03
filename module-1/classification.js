@@ -9,6 +9,7 @@
  *
  * @param {number} score (0 <= score <= 100)
  * @returns {number} grade or 0 if any arguments are not proper
+ * Test comment for Jenkins
  */
 function grade(score) {
     let gradeOfStudent;
