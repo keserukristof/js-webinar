@@ -11,7 +11,6 @@
     "test:plus": "mocha plus/test/**/*.spec.js",
     "test:plus:async": "mocha plus/test/async/*.spec.js"
   },
-  "bin": { "cucumber.js": "./bin/cucumber.js", "cucumber-js": "./bin/cucumber.js" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/szikszail/js-webinar.git"
