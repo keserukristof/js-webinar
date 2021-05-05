@@ -11,6 +11,7 @@
  * @returns {number} grade or 0 if any arguments are not proper
  * Test comment for Jenkins
  * Test js-webinar-test-on-push
+ * Test js-webinar-test-on-push2
  */
 function grade(score) {
     let gradeOfStudent;
