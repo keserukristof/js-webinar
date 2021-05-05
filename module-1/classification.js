@@ -12,6 +12,7 @@
  * Test comment for Jenkins
  * Test js-webinar-test-on-push
  * Test js-webinar-test-on-push2
+ * Test js-webinar-test-on-push3
  */
 function grade(score) {
     let gradeOfStudent;
