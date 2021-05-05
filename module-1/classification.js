@@ -10,6 +10,7 @@
  * @param {number} score (0 <= score <= 100)
  * @returns {number} grade or 0 if any arguments are not proper
  * Test comment for Jenkins
+ * Test js-webinar-test-on-push
  */
 function grade(score) {
     let gradeOfStudent;
