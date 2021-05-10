@@ -29,6 +29,7 @@
  * Test js-webinar-test-on-push17
  * Test js-webinar-test-on-push18
  * Test js-webinar-test-on-push19
+ * Test js-webinar-test-on-push20
  */
 function grade(score) {
     let gradeOfStudent;
