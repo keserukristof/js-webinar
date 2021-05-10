@@ -60,4 +60,5 @@ console.log(calc(10).modulo(5).v);
 console.log(calc(4).add(4).times(5).div(1.5).minus(2).v);
 console.log(calc(5).div(0));
 Test Jenkins 21
+Test Jenkins 22
 */
